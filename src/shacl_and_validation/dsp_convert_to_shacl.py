@@ -130,15 +130,29 @@ for _, row in df.iterrows():
     # プロパティ制約を追加
     max_count_statement = f"        sh:maxCount {max_count} ;" if max_count is not None else ""
     
-    property_shape = f"""    sh:property [
-        sh:path {shortened_uri} ;
-{name_statement}
-        sh:minCount {min_count} ;
-{max_count_statement}
-{range_statement}
-{comment_statement}
-    ] ;
-"""
+    # プロパティシェイプの各行を動的に構築
+    property_lines = [
+        "    sh:property [",
+        f"        sh:path {shortened_uri} ;"
+    ]
+    
+    if name_statement:
+        property_lines.append(name_statement)
+    
+    property_lines.append(f"        sh:minCount {min_count} ;")
+    
+    if max_count_statement:
+        property_lines.append(max_count_statement)
+    
+    if range_statement:
+        property_lines.append(range_statement)
+    
+    if comment_statement:
+        property_lines.append(comment_statement)
+    
+    property_lines.append("    ] ;")
+    
+    property_shape = "\n".join(property_lines) + "\n"
     shapes[shape_uri] += property_shape
 
 # 生成した SHACL スキーマを出力

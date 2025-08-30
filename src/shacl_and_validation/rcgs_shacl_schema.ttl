@@ -1,0 +1,2986 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ex: <http://example.org/shapes/> .
+@prefix ma: <https://mediaarts-db.artmuseums.go.jp/data/property/> .
+@prefix class: <https://mediaarts-db.artmuseums.go.jp/data/class/> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rcgs: <https://collection.rcgs.jp/terms/> .
+@prefix dcndl: <http://ndl.go.jp/dcndl/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+ex:WorkShape
+    a sh:NodeShape ;
+    sh:targetClass rcgs:Work ;
+    sh:property [
+        sh:path rcgs:recordID ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの記述単位毎に付与される識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:adminMetadata ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:AdminMetadata ;
+        sh:description "メタデータの管理情報"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdf:type ;
+        sh:minCount 0 ;
+
+        sh:class rdfs:Class ;
+        sh:description "リソースの形式"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの優先的に用いられる名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:altLabel ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの代替的に用いられる名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:spatial ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースに関する場所"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:date ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class dcterms:W3CDTF ;
+        sh:description "リソースに関する日付"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:description ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの内容に関する説明"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "同じもしくは関連するリソースを示す外部の典拠の識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:closeMatch ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "レコードを作成するにあたって基準となるWikidataのレコード"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:youtubeGaming ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "Youtube Gamingのリソースの識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:twitch ;
+        sh:minCount 0 ;
+        sh:datatype xsd:string ;
+        sh:description "Twitchののリソースの識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:freebase ;
+        sh:minCount 0 ;
+        sh:datatype xsd:string ;
+        sh:description "Freebaseのリソースの識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:mobyGames ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "MobyGamesのリソースの識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:metacritic ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "Metacriticsのリソースの識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:seeAlso ;
+        sh:minCount 0 ;
+
+        sh:class dcterms:URI ;
+        sh:description "同じもしくは関連するリソースを示す外部のウェブサイト"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:imdb ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "Imdbのリソースの識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:genre ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Topic ;
+        sh:description "ゲームの目的やルールの形式や特徴などに基づくゲームの全般的性質"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:narrativeGenre ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Topic ;
+        sh:description "ゲーム世界やプロットの一般的形式"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:abstract ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの内容の短い説明や表示"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:theme ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Topic ;
+        sh:description "ゲームで繰り返し登場する筋道やモチーフや主題やアイデア"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:mood ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Topic ;
+        sh:description "特定の感情や心情を喚起するゲームの雰囲気やトーンの形式"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:setting ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "ゲーム内で位置づけられる時期"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:series ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Topic ;
+        sh:description "しばしばナンバリングで示される物語の継続やゲームプレイやテーマの類似性を示す複数のゲーム作品に共通する名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:franchise ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Topic ;
+        sh:description "知的財産やデータの関連やコンテンツの共有などに関連する一般的な名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:mechanic ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "ゲームの進展と状態との相互作用に用いられる主要な方法とルール"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:protagonist ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Topic ;
+        sh:description "プレイヤーが操作する主人公"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:audience ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースが想定する対象者"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:natureOfContent ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの主要なコンテンツの特性"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:serialNumber ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "シリアルのリソースの一部である場合の部分の指定"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:disambiguatingDescription ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "他の属性や関連で記録されないリソースの識別的特徴"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:locationCreated ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの創作に関する場所"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:about ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Topic ;
+        sh:description "リソースのトピック"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:subjectOf ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Topic ;
+        sh:description "リソースを主題とするリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:character ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Thing ;
+        sh:description "リソースのコンテンツに登場するキャラクター"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:gameLocation ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Topic ;
+        sh:description "ゲーム内で舞台となる場所"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:creator ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "リソースの創作に責任を持つ主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:productionCompany ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "リソースの制作に責任を持つ団体"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:relatedAgent ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "リソースに関連を持つ主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:logo ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースを示すロゴ画像"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:variation ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Variation ;
+        sh:description "作品を実現するバリエーション"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:embodiment ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Package ;
+        sh:description "作品を具体化するパッケージ"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:relation ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Work ;
+        sh:description "リソースに関連を持つリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:isPartOf ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:Work ;
+        sh:description "リソースを論理的・物理的に部分として持つリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:hasPart ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Work ;
+        sh:description "リソースの論理的・物理的な部分であるリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:precedes ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Work ;
+        sh:description "リソースに先行するリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:succeeds ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Work ;
+        sh:description "リソースに後続するリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:sequelTo ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Work ;
+        sh:description "リソースに物語上先行するリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:sequel ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Work ;
+        sh:description "リソースに物語上後続するリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:remadeAs ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Work ;
+        sh:description "リソースのリメイク元であるリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:complements ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Work ;
+        sh:description "リソースの補完されたリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:expandedAs ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Work ;
+        sh:description "リソースの増補されたリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:spinOff ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Work ;
+        sh:description "リソースのスピンオフされたリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:note ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソース識別に関する注記"@ja ;
+    ] ;
+.
+
+ex:VariationShape
+    a sh:NodeShape ;
+    sh:targetClass rcgs:Variation ;
+    sh:property [
+        sh:path rcgs:recordID ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの記述単位毎に付与される識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:adminMetadata ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:AdminMetadata ;
+        sh:description "メタデータの管理情報"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの優先的に用いられる名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:altLabel ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの代替的に用いられる名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:version ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの識別のための版の指定"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:actor ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "リソースの内容に出演した主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:contribution ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Contribution ;
+        sh:description "リソースに貢献した主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:award ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの内容に授与された賞"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:date ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class dcterms:W3CDTF ;
+        sh:description "リソースに関連する日付"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:screenShot ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "ゲームプレイの画面イメージ"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:gamePlayImage ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "紹介やカットシーンを除くゲームプレイの映像"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:middlewareOrGameEngine ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの制作に用いられたミドルウェアもしくはゲームエンジン"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:gamePlatform ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Platform ;
+        sh:description "リソースをプレイするためのゲームプラットフォーム"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "同じもしくは関連するリソースを示す外部の典拠の識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:disambiguatingDescription ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "他の属性や関連で記録されないリソースの識別的特徴"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:abstract ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの内容の概要"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:contentType ;
+        sh:minCount 0 ;
+
+        sh:in ("http://rdaregistry.info/termList/RDAContentType/1001" "http://rdaregistry.info/termList/RDAContentType/1002" "http://rdaregistry.info/termList/RDAContentType/1003" "http://rdaregistry.info/termList/RDAContentType/1004" "http://rdaregistry.info/termList/RDAContentType/1005" "http://rdaregistry.info/termList/RDAContentType/1006" "http://rdaregistry.info/termList/RDAContentType/1007" "http://rdaregistry.info/termList/RDAContentType/1008" "http://rdaregistry.info/termList/RDAContentType/1009" "http://rdaregistry.info/termList/RDAContentType/1010" "http://rdaregistry.info/termList/RDAContentType/1011" "http://rdaregistry.info/termList/RDAContentType/1012" "http://rdaregistry.info/termList/RDAContentType/1013" "http://rdaregistry.info/termList/RDAContentType/1014" "http://rdaregistry.info/termList/RDAContentType/1015" "http://rdaregistry.info/termList/RDAContentType/1016" "http://rdaregistry.info/termList/RDAContentType/1017" "http://rdaregistry.info/termList/RDAContentType/1018" "http://rdaregistry.info/termList/RDAContentType/1019" "http://rdaregistry.info/termList/RDAContentType/1020" "http://rdaregistry.info/termList/RDAContentType/1021" "http://rdaregistry.info/termList/RDAContentType/1022" "http://rdaregistry.info/termList/RDAContentType/1023") ;
+        sh:description "リソースの形態の一般形による種別"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:audio ;
+        sh:minCount 0 ;
+
+        sh:in ("http://rdaregistry.info/termList/soundCont/1001" "http://rdaregistry.info/termList/soundCont/1002") ;
+        sh:description "リソースの内容における音声の有無"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:color ;
+        sh:minCount 0 ;
+
+        sh:in ("http://rdaregistry.info/termList/RDAColourContent/1002" "http://rdaregistry.info/termList/RDAColourContent/1003") ;
+        sh:description "リソースの内容における色や色調"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:aspectRatio ;
+        sh:minCount 0 ;
+
+        sh:in ("http://rdaregistry.info/termList/AspectRatio/1001" "http://rdaregistry.info/termList/AspectRatio/1002" "http://rdaregistry.info/termList/AspectRatio/1003") ;
+        sh:description "リソースの動画の幅と高さの数値の比率"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:language ;
+        sh:minCount 0 ;
+
+        sh:class <http://id.loc.gov/vocabulary/iso639-2> ;
+        sh:description "リソースの内容の言語"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:variationOf ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:Work ;
+        sh:description "リソースにより実現される作品"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:specialHardware ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Device ;
+        sh:description "ゲームプレイに推奨されるもしくは必要とされる追加の装置"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:customizationOption ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "プレイヤー個人の経験のためのキャラクターや難易度についてのゲーム内の選択"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:networkedFutures ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "企業や他のプレイヤーと接続しゲーム経験を提供するための機能や特徴"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:connectivity ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "ネットワーク機能を実現する技術"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:ending ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:boolean ;
+        sh:description "エンディングの有無"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:multipleEnding ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:boolean ;
+        sh:description "マルチエンディングの有無"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:postGameContents ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:boolean ;
+        sh:description "エンディング後のさらなるゲームプレイのための内容の有無"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:estimatedTimeOfCompletion ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "ゲームを完了するまでに必要とされる時間の平均"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:visualStyle ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "ゲームの認識可能な外観に共通する主要な形式"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:dimension ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Topic ;
+        sh:description "ゲーム内の表象的実体の深さや奥行きについての意図された形式や見方"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:pointOfView ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Topic ;
+        sh:description "ゲーム内におけるプレイヤーが経験する視点の形式"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:trailer ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "プロモーションのためにゲーム開発者か出版者によりリリース・承認された映像"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:difficultyOption ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "選択できる難易度の段階やリスト"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:embodiment ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Package ;
+        sh:description "リソースを具体化するパッケージ"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:relation ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Variation ;
+        sh:description "リソースの関連を持つリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:hasVersion ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Variation ;
+        sh:description "リソースの論理的・物理的に部分として持つリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:isVersionOf ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:Variation ;
+        sh:description "リソースの論理的・物理的な部分であるリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:procedes ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Variation ;
+        sh:description "リソースの同一作品の先行するリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:succeeds ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Variation ;
+        sh:description "リソースの同一作品の後続するリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:supplements ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Variation ;
+        sh:description "リソースの同一作品の補完されたリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:complements ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Variation ;
+        sh:description "リソースと同一作品の相互補完的なリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:crossPlay ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Variation ;
+        sh:description "リソースと同一作品のクロスプラットフォームプレイ可能なリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:localizedAs ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Variation ;
+        sh:description "リソースが同一作品のローカライズされたリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:porting ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Variation ;
+        sh:description "リソースの同一作品の移植であるリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:expandedAs ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Variation ;
+        sh:description "リソースの同一作品の増補であるリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:bugfix ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Variation ;
+        sh:description "リソースの同一作品のバグが修正されたリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:trial ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Variation ;
+        sh:description "リソースの同一作品の体験版のリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:aggregates ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Variation ;
+        sh:description "リソースが集約するリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:aggregatedBy ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Variation ;
+        sh:description "リソースが集約されるリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:note ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの識別に関する注記"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:description ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの内容に関する記述"@ja ;
+    ] ;
+.
+
+ex:PackageShape
+    a sh:NodeShape ;
+    sh:targetClass rcgs:Package ;
+    sh:property [
+        sh:path rcgs:recordID ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの記述単位毎に付与される識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:adminMetadata ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:AdminMetadata ;
+        sh:description "メタデータの管理情報"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdf:type ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in (rcgs:PhysicalPackage rcgs:OnlinePackage) ;
+        sh:description "リソースが属するサブクラス"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:name ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースに表記される主要なタイトル"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcndl:titleTranscription ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのタイトルのカタカナかローマ字による翻字形"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:parallelTitle ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの主要なタイトル以外の表記されるタイトル"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:variantTitle ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの他のタイトルの属性で記録されないタイトル"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:abbreviatedTitle ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのタイトルの省略形"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcndl:edition ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの版の識別のための指定"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcndl:volume ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースがある作品やシリーズの一部であることを示す表示"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:responsibilityStatement ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのタイトルの責任に関する表示"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:producer ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "非複製物であるリソースを制作した主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:publisher ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "リソースを出版した主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:distributor ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "リソースを頒布した主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:manufacturer ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "リソースを製造した主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:brand ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの責任に関するブランド"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:provisionActivity ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:ProvisionActivity ;
+        sh:description "リソースの供給に関連する主体や場所や日付の情報"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:issued ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースが公開された日付"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:copyrightYear ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの著作権など保護の主張に関連する日付"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:seriesStatement ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースが属するシリーズのタイトルやシリーズ内ナンバーの表示"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:subseriesStatement ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースが属するサブシリーズのタイトルやサブシリーズ内ナンバーの表示"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:modeOfIssuance ;
+        sh:minCount 0 ;
+
+        sh:in ("http://rdaregistry.info/termList/ModeIssue/1001" "http://rdaregistry.info/termList/ModeIssue/1002" "http://rdaregistry.info/termList/ModeIssue/1003" "http://rdaregistry.info/termList/ModeIssue/1004") ;
+        sh:description "単独、複数部分での発行、更新方法ないしは終了の決定を反映した分類"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcndl:publicationPeriodicity ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:in ("http://rdaregistry.info/termList/frequency/1001" "http://rdaregistry.info/termList/frequency/1002" "http://rdaregistry.info/termList/frequency/1003" "http://rdaregistry.info/termList/frequency/1004" "http://rdaregistry.info/termList/frequency/1005" "http://rdaregistry.info/termList/frequency/1006" "http://rdaregistry.info/termList/frequency/1007" "http://rdaregistry.info/termList/frequency/1008" "http://rdaregistry.info/termList/frequency/1009" "http://rdaregistry.info/termList/frequency/1010" "http://rdaregistry.info/termList/frequency/1011" "http://rdaregistry.info/termList/frequency/1012" "http://rdaregistry.info/termList/frequency/1013" "http://rdaregistry.info/termList/frequency/1014" "http://rdaregistry.info/termList/frequency/1015" "http://rdaregistry.info/termList/frequency/1016") ;
+        sh:description "リソースの刊行の頻度の分類"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:volumeNumber ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:description "シリアルにおける出版の巻の指定、もしくは整数による号の指定"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:issueNumber ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:description "シリアルにおける出版の号の指定"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:serialNumber ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "シリアルにおける部分を示す順番に基づく指定の表示"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "同じもしくは関連するリソースを示す外部の典拠の識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:gtin13 ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの主にバーコードで提供されるGTINによる識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:isbn ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのISBNによる識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:issn ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのISSNによる識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:modelNumber ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの供給者が定義する型番による識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:jpNumber ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの全国書誌場号による識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:ndlBibID ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの国会図書館書誌IDによる識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:oclcNumber ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのOCLCによる識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:format ;
+        sh:minCount 1 ;
+
+        sh:class dcterms:MediaTypeOrExtent ;
+        sh:description "リソースのメインユニットのメディア形式とその数量や大きさ"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:formatOfSubunit ;
+        sh:minCount 0 ;
+
+        sh:class dcterms:MediaTypeOrExtent ;
+        sh:description "リソースのサブユニットのメディア形式とその数量や大きさ"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:videoFormat ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースのプレイに用いられるテレビ放送のシステム"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:digitalFileType ;
+        sh:minCount 0 ;
+
+        sh:in ("http://rdaregistry.info/termList/fileType/1001" "http://rdaregistry.info/termList/fileType/1002" "http://rdaregistry.info/termList/fileType/1003" "http://rdaregistry.info/termList/fileType/1004" "http://rdaregistry.info/termList/fileType/1005" "http://rdaregistry.info/termList/fileType/1006") ;
+        sh:description "コンピュータファイルとして符号化されたデータの内容の一般形の分類"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:videoFrameSize  ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "デジタル画像の明瞭度または細かさ"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:regionsAllowed ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "キャリアの再生においてデバイスの限定を示す符号化の単独または複数の地域の指定"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:middlewareOrGameEngine ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの制作に用いられたミドルウェアもしくはゲームエンジン"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:drm ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "ゲーム利用制御のためのデジタルライツ技術"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:representativeImage ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "ゲームを代表する公式に公開されたパッケージなどの画像"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:thumbnailUrl ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "ゲームパッケージのサムネイル画像"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:gamePlatform ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Platform ;
+        sh:description "リソースをプレイするためのゲームプラットフォーム"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:price ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの供給者による希望小売価格"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:contentRating ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:ContentRating ;
+        sh:description "リソースが想定する対象者を示す年齢レーティングの分類"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:ratingContentDescriptor ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "年齢レーティングの要因を示す内容の種別の分類"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:accessRights ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのアクセス制限"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:numberOfPlayers ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースを同時にプレイする人数"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:requirement ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのプレイの要件となる装置もしくはシステムの要件"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:embodimentOf ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Variation ;
+        sh:description "パッケージにより具体化されるバリエーション"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:embodiedWork ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Work ;
+        sh:description "パッケージにより具体化される作品"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:exemplar ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Item ;
+        sh:description "リソースを例示する個別資料"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:hasPart ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Package ;
+        sh:description "リソースの論理的・物理的に部分として持つリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:isPartOf ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Package ;
+        sh:description "リソースの論理的・物理的な部分であるリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:contactPoints ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースに表記されるアクセス先である電話番号"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:url ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの制作者や供給者によるオフィシャルウェブサイト"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:rights ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの権利の表記"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:tableOfContents ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースを構成するサブユニットのリスト"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:description ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの説明や注記とその他の属性で記録されない識別的特徴"@ja ;
+    ] ;
+.
+
+ex:PhysicalPackageShape
+    a sh:NodeShape ;
+    sh:targetClass rcgs:PhysicalPackage ;
+    sh:property [
+        sh:path rcgs:dimension ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの大きさの測定値"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:medium ;
+        sh:minCount 0 ;
+
+        sh:in ("http://rdaregistry.info/termList/RDAMaterial/1001" "http://rdaregistry.info/termList/RDAMaterial/1002" "http://rdaregistry.info/termList/RDAMaterial/1003" "http://rdaregistry.info/termList/RDAMaterial/1004" "http://rdaregistry.info/termList/RDAMaterial/1005" "http://rdaregistry.info/termList/RDAMaterial/1006" "http://rdaregistry.info/termList/RDAMaterial/1007" "http://rdaregistry.info/termList/RDAMaterial/1008" "http://rdaregistry.info/termList/RDAMaterial/1009" "http://rdaregistry.info/termList/RDAMaterial/1010" "http://rdaregistry.info/termList/RDAMaterial/1011" "http://rdaregistry.info/termList/RDAMaterial/1012" "http://rdaregistry.info/termList/RDAMaterial/1013" "http://rdaregistry.info/termList/RDAMaterial/1014" "http://rdaregistry.info/termList/RDAMaterial/1015" "http://rdaregistry.info/termList/RDAMaterial/1016" "http://rdaregistry.info/termList/RDAMaterial/1017" "http://rdaregistry.info/termList/RDAMaterial/1018" "http://rdaregistry.info/termList/RDAMaterial/1019" "http://rdaregistry.info/termList/RDAMaterial/1020" "http://rdaregistry.info/termList/RDAMaterial/1021" "http://rdaregistry.info/termList/RDAMaterial/1022" "http://rdaregistry.info/termList/RDAMaterial/1023" "http://rdaregistry.info/termList/RDAMaterial/1024" "http://rdaregistry.info/termList/RDAMaterial/1025" "http://rdaregistry.info/termList/RDAMaterial/1026" "http://rdaregistry.info/termList/RDAMaterial/1027" "http://rdaregistry.info/termList/RDAMaterial/1028" "http://rdaregistry.info/termList/RDAMaterial/1029" "http://rdaregistry.info/termList/RDAMaterial/1030" "http://rdaregistry.info/termList/RDAMaterial/1031" "http://rdaregistry.info/termList/RDAMaterial/1032" "http://rdaregistry.info/termList/RDAMaterial/1033" "http://rdaregistry.info/termList/RDAMaterial/1034" "http://rdaregistry.info/termList/RDAMaterial/1035" "http://rdaregistry.info/termList/RDAMaterial/1036" "http://rdaregistry.info/termList/RDAMaterial/1037" "http://rdaregistry.info/termList/RDAMaterial/1038" "http://rdaregistry.info/termList/RDAMaterial/1039" "http://rdaregistry.info/termList/RDAMaterial/1040" "http://rdaregistry.info/termList/RDAMaterial/1041" "http://rdaregistry.info/termList/RDAMaterial/1042" "http://rdaregistry.info/termList/RDAMaterial/1043" "http://rdaregistry.info/termList/RDAMaterial/1044" "http://rdaregistry.info/termList/RDAMaterial/1045" "http://rdaregistry.info/termList/RDAMaterial/1046" "http://rdaregistry.info/termList/RDAMaterial/1047" "http://rdaregistry.info/termList/RDAMaterial/1048") ;
+        sh:description "リソースを物理的に構成する素材の分類"@ja ;
+    ] ;
+.
+
+ex:OnlinePackageShape
+    a sh:NodeShape ;
+    sh:targetClass rcgs:OnlinePackage ;
+    sh:property [
+        sh:path schema:downloadUrl ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースを取得するためのURL"@ja ;
+    ] ;
+.
+
+ex:ItemShape
+    a sh:NodeShape ;
+    sh:targetClass rcgs:Item ;
+    sh:property [
+        sh:path rcgs:recordID ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの記述単位毎に付与される識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:adminMetadata ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:AdminMetadata ;
+        sh:description "メタデータの管理情報"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:title ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcndl:holdlingAgent ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class foaf:Agent ;
+        sh:description "リソースを合法的に補完する主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:owns ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "合法的に所有する主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:exemplarOf ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:Instance ;
+        sh:description "個別資料により例示されるリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:donor ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "リソースを寄贈した前の所有者である主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:seller ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "リソースを売却した前の所有者である主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "同じリソースを示す外部の典拠の識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:spatial ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースに関連する場所"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:itemCondition ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースと同一のパッケージのリソースとの状態や数量や大きさに関する記録"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:description ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの説明や注記とその他の属性で記録されない識別的特徴"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:provenance ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースを入手した情報源とそれが受け取られた状況"@ja ;
+    ] ;
+.
+
+ex:AgentShape
+    a sh:NodeShape ;
+    sh:targetClass foaf:Agent ;
+    sh:property [
+        sh:path rcgs:recordID ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの記述単位毎に付与される識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:adminMetadata ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:AdminMetadata ;
+        sh:description "メタデータの管理情報"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdf:type ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class foaf:Person, foaf:Organization ;
+        sh:description "リソースが属するサブクラス"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの優先的に用いられる名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:altLabel ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの代替的に用いられる名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path foaf:homepage ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのウェブサイト"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:description ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの略歴"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "同じもしくは関連するリソースを示す外部の典拠の識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:ndlAuthoritiesID ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの国立国会図書館典拠ファイルによる識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:viafID ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのバーチャル国際典拠ファイルによる識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:wikidataID ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのWikidataによる識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:twitterID ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのTwitterアカウントの識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:seeAlso ;
+        sh:minCount 0 ;
+
+        sh:class dcterms:URI ;
+        sh:description "同じもしくは関連するリソースを示す外部のウェブサイト"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:language ;
+        sh:minCount 0 ;
+
+        sh:class <http://id.loc.gov/vocabulary/iso639-2> ;
+        sh:description "リソースが表現や記録に用いる言語"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:disambiguatingDescription ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの他の属性で記録されない識別的特徴"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:note ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの識別に関する注記"@ja ;
+    ] ;
+.
+
+ex:PersonShape
+    a sh:NodeShape ;
+    sh:targetClass foaf:Person ;
+    sh:property [
+        sh:path schema:hasOccupation ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "個人の本業や副業"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:birthDate ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class dcterms:W3CDTF ;
+        sh:description "個人の生年"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:deathDate ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class dcterms:W3CDTF ;
+        sh:description "個人の没年"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:birthPlace ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "個人の誕生した場所"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:deathPlace ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "個人の死没した場所"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:homeLocation ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "個人の居住地"@ja ;
+    ] ;
+    sh:property [
+        sh:path foaf:mbox ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "個人の公開されたメールアドレス"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:addressCountry ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "個人を識別するための国"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:additionalName ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "個人の名称の展開形"@ja ;
+    ] ;
+    sh:property [
+        sh:path foaf:title ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "個人の称号 (Mr, Mrs, Ms, Dr. etc) "@ja ;
+    ] ;
+.
+
+ex:OrganizationShape
+    a sh:NodeShape ;
+    sh:targetClass foaf:Organization ;
+    sh:property [
+        sh:path schema:additionalType ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rdfs:Class ;
+        sh:description "団体の一般形の分類"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:startDate ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class dcterms:W3CDTF ;
+        sh:description "団体の設立日"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:endDate ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class dcterms:W3CDTF ;
+        sh:description "団体の廃止日"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:address ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "団体の住所"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:latitude ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:float ;
+        sh:description "団体の所在地の緯度"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:longitude ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:float ;
+        sh:description "団体の所在地の経度"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:relatedOrganization ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Organization ;
+        sh:description "団体に関連のある団体"@ja ;
+    ] ;
+    sh:property [
+        sh:path foaf:member ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Person ;
+        sh:description "団体のメンバーの個人"@ja ;
+    ] ;
+    sh:property [
+        sh:path foaf:logo ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "団体のロゴ"@ja ;
+    ] ;
+.
+
+ex:PlatformShape
+    a sh:NodeShape ;
+    sh:targetClass rcgs:Platform ;
+    sh:property [
+        sh:path rcgs:recordID ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの記述単位毎に付与される識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:adminMetadata ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:AdminMetadata ;
+        sh:description "メタデータの管理情報"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:additionalType ;
+        sh:minCount 0 ;
+
+        sh:class rdfs:Class ;
+        sh:description "リソースが所属するクラスにおけるサブタイプの指定"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの優先的に用いられる名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:altLabel ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの代替的に用いられる名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:spatial ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの用いられる場所"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:publisher ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "リソースを公開した主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcndl:location ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの公開に関連する場所"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:issued ;
+        sh:minCount 0 ;
+
+        sh:class dcterms:W3CDTF ;
+        sh:description "リソースの公開に関連する日付"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:disambiguatingDescription ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの他の属性で記録されない識別的特徴"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "同じもしくは関連するリソースを示す外部のウェブサイト"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:deviceImplimented ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Device ;
+        sh:description "リソースを実装する装置"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:seeAlso ;
+        sh:minCount 0 ;
+
+        sh:class dcterms:URI ;
+        sh:description "同じもしくは関連するリソースを示す外部のウェブサイト"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:url ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースに関連するURL"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:note ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの識別に関する注記"@ja ;
+    ] ;
+.
+
+ex:DeviceShape
+    a sh:NodeShape ;
+    sh:targetClass rcgs:Device ;
+    sh:property [
+        sh:path rcgs:recordID ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの記述単位毎に付与される識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:adminMetadata ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:AdminMetadata ;
+        sh:description "メタデータの管理情報"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:additionalType ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:in (rcgs:GameDevice rcgs:PeripheralEquipment) ;
+        sh:description "リソースが所属するクラスにおけるサブタイプの指定"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの優先的に用いられる名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:altLabel ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの代替的に用いられる名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcndl:edition ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの版の識別のための指定"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:videoFormat ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの実装に用いられるテレビ放送のシステム"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:connects ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Device ;
+        sh:description "リソースに接続するリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:encodingFormat ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:MediaFormat ;
+        sh:description "リソースに実装するメディア形式"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:spatial ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースに関連する場所"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:material ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースを物理的に構成する素材"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "同じもしくは関連するリソースを示す外部のウェブサイト"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:modelNumber ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "パッケージの供給者が定義する型番による識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:gtin13 ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "パッケージの主にバーコードで提供されるGTINによる識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:distributor ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "リソースを創作した主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:issued ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class dcterms:W3CDTF ;
+        sh:description "リソースを頒布した主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcndl:location ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの頒布に関連する場所"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:inserts ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Package ;
+        sh:description "リソースに挿入されたパッケージ"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:gamePlatform ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Platform ;
+        sh:description "リソースに実装されたプラットフォーム"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:brand ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの創作や頒布の責任に関するブランド"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:specConnection ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの機器接続に関する仕様"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:controller ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのコントローラーの数量や入力端子などの仕様"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:dimension ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの大きさの測定値"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:weight ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの重量の測定値"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:extent ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースを構成するユニットの数量"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:tableOfContents ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースを構成するサブユニットのリスト"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:disambiguatingDescription ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの他の属性で記録されない識別的特徴"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:videoFrameSize ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの映像出力の解像度"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:sound ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの音声出力"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:powerConsumption ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの消費電力"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:description ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースに関する説明"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:note ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの識別に関する注記"@ja ;
+    ] ;
+.
+
+ex:ContentRatingShape
+    a sh:NodeShape ;
+    sh:targetClass rcgs:ContentRating ;
+    sh:property [
+        sh:path rcgs:recordID ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの記述単位毎に付与される識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:adminMetadata ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:AdminMetadata ;
+        sh:description "メタデータの管理情報"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの優先的に用いる名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:altLabel ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの代替的に用いる名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:spatial ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースに関する場所"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "同じもしくは関連するリソースの識別子を示す外部のウェブサイト"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:wikidataID ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのWikidataによる識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:seeAlso ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "同じもしくは関連するリソースを示す外部のウェブサイト"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:date ;
+        sh:minCount 0 ;
+
+        sh:class dcterms:W3CDTF ;
+        sh:description "リソースに関連する日付"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcndl:location ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの発行に関連する場所"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:publisher ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "リソースを発行する主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:publisherStatement ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースを発行する主体の表示される名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:description ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースに関する説明"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:logo ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのロゴ"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:note ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの識別に関する注記"@ja ;
+    ] ;
+.
+
+ex:MediaFormatShape
+    a sh:NodeShape ;
+    sh:targetClass rcgs:MediaFormat ;
+    sh:property [
+        sh:path rcgs:recordID ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの記述単位毎に付与される識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:adminMetadata ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:AdminMetadata ;
+        sh:description "メタデータの管理情報"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:mediaFormatType ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in ("物理メディア" "ソフトウェア") ;
+        sh:description "リソースの一般形による分類"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの優先的に用いる名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:altLabel ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの代替的に用いる名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:dimension ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの大きさの測定値"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:fileSize ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースのファイル容量"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "同じもしくは関連するリソースの識別子を示す外部のウェブサイト"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:disambiguatingDescription ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの他の属性で記録されない識別的特徴"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:description ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースに関する説明"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:note ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの識別に関する注記"@ja ;
+    ] ;
+.
+
+ex:RelatedInstanceShape
+    a sh:NodeShape ;
+    sh:targetClass rcgs:RelatedInstance ;
+    sh:property [
+        sh:path rcgs:recordID ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの記述単位毎に付与される識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:adminMetadata ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:AdminMetadata ;
+        sh:description "メタデータの管理情報"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdf:type ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class rdfs:Class ;
+        sh:description "リソースの一般形による分類"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:name ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースに表記される主要なタイトル"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcndl:titleTranscription ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのタイトルのカタカナかローマ字による翻字形"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:parallelTitle ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの主要なタイトル以外の表記されるタイトル"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:alternative ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの他のタイトルの属性で記録されないタイトル"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:abbreviatedTitle ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのタイトルの省略形"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcndl:edition ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの版の識別のための指定"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcndl:volume ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースがある作品やシリーズの一部であることを示す表示"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:responsibilityStatement ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのタイトルの責任に関する表示"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:creator ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "リソースの創作に責任を持つ主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:contribution ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Contribution ;
+        sh:description "リソースに貢献した主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:issued ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースが公開された日付"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:format ;
+        sh:minCount 1 ;
+
+        sh:class dcterms:MediaTypeOrExtent ;
+        sh:description "リソースのメディア形式とその数量や大きさ"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:formatOfSubunit ;
+        sh:minCount 0 ;
+
+        sh:class dcterms:MediaTypeOrExtent ;
+        sh:description "リソースのサブユニットのメディア形式とその数量や大きさ"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:dimension ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの大きさの測定値"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:medium ;
+        sh:minCount 0 ;
+
+        sh:in ("http://rdaregistry.info/termList/RDAMaterial/1001" "http://rdaregistry.info/termList/RDAMaterial/1002" "http://rdaregistry.info/termList/RDAMaterial/1003" "http://rdaregistry.info/termList/RDAMaterial/1004" "http://rdaregistry.info/termList/RDAMaterial/1005" "http://rdaregistry.info/termList/RDAMaterial/1006" "http://rdaregistry.info/termList/RDAMaterial/1007" "http://rdaregistry.info/termList/RDAMaterial/1008" "http://rdaregistry.info/termList/RDAMaterial/1009" "http://rdaregistry.info/termList/RDAMaterial/1010" "http://rdaregistry.info/termList/RDAMaterial/1011" "http://rdaregistry.info/termList/RDAMaterial/1012" "http://rdaregistry.info/termList/RDAMaterial/1013" "http://rdaregistry.info/termList/RDAMaterial/1014" "http://rdaregistry.info/termList/RDAMaterial/1015" "http://rdaregistry.info/termList/RDAMaterial/1016" "http://rdaregistry.info/termList/RDAMaterial/1017" "http://rdaregistry.info/termList/RDAMaterial/1018" "http://rdaregistry.info/termList/RDAMaterial/1019" "http://rdaregistry.info/termList/RDAMaterial/1020" "http://rdaregistry.info/termList/RDAMaterial/1021" "http://rdaregistry.info/termList/RDAMaterial/1022" "http://rdaregistry.info/termList/RDAMaterial/1023" "http://rdaregistry.info/termList/RDAMaterial/1024" "http://rdaregistry.info/termList/RDAMaterial/1025" "http://rdaregistry.info/termList/RDAMaterial/1026" "http://rdaregistry.info/termList/RDAMaterial/1027" "http://rdaregistry.info/termList/RDAMaterial/1028" "http://rdaregistry.info/termList/RDAMaterial/1029" "http://rdaregistry.info/termList/RDAMaterial/1030" "http://rdaregistry.info/termList/RDAMaterial/1031" "http://rdaregistry.info/termList/RDAMaterial/1032" "http://rdaregistry.info/termList/RDAMaterial/1033" "http://rdaregistry.info/termList/RDAMaterial/1034" "http://rdaregistry.info/termList/RDAMaterial/1035" "http://rdaregistry.info/termList/RDAMaterial/1036" "http://rdaregistry.info/termList/RDAMaterial/1037" "http://rdaregistry.info/termList/RDAMaterial/1038" "http://rdaregistry.info/termList/RDAMaterial/1039" "http://rdaregistry.info/termList/RDAMaterial/1040" "http://rdaregistry.info/termList/RDAMaterial/1041" "http://rdaregistry.info/termList/RDAMaterial/1042" "http://rdaregistry.info/termList/RDAMaterial/1043" "http://rdaregistry.info/termList/RDAMaterial/1044" "http://rdaregistry.info/termList/RDAMaterial/1045" "http://rdaregistry.info/termList/RDAMaterial/1046" "http://rdaregistry.info/termList/RDAMaterial/1047" "http://rdaregistry.info/termList/RDAMaterial/1048") ;
+        sh:description "リソースを物理的に構成する素材"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "同じもしくは関連するリソースの識別子を示す外部のウェブサイト"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:gtin13 ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの主にバーコードで提供されるGTINによる識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:isbn ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのISBNによる識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:issn ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのISSNによる識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:modelNumber ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの供給者が定義する型番による識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:jpNumber ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの全国書誌番号による識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:ndlBiBID ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの国会図書館書誌IDによる識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:oclcNumber ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのOCLCナンバーによる識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:seeAlso ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "同じもしくは関連するリソースを示す外部のウェブサイト"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:copyrightYear ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの著作権など保護の主張に関連する日付"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:accessRights ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースのアクセス制限"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:hasPart ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:RelatedInstance ;
+        sh:description "リソースの論理的・物理的に部分として持つリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:isPartOf ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:RelatedInstance ;
+        sh:description "リソースの論理的・物理的な部分であるリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:abstract ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの内容の概要"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:description ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの説明や注記とその他の属性で記録されない識別的特徴"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:language ;
+        sh:minCount 0 ;
+
+        sh:class <http://id.loc.gov/vocabulary/iso639-2> ;
+        sh:description "リソースの内容で用いられる言語"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:about ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Topic ;
+        sh:description "リソースのトピック"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:tableOfContents ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースを構成するサブユニットのリスト"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:brand ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの責任に関連するブランド"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:provisionActivity ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:ProvisionActivity ;
+        sh:description "リソースの供給に関連する主体や場所や日付の情報"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:producer ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "非複製物であるリソースを制作した主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:publisher ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "リソースを出版した主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:distributor ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "リソースを頒布した主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:manufacturer ;
+        sh:minCount 0 ;
+
+        sh:class foaf:Agent ;
+        sh:description "リソースを製造した主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:seriesStatement ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースが属するシリーズのタイトルやシリーズ内ナンバーの表示"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:subseriesStatement ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースが属するサブシリーズのタイトルやサブシリーズ内ナンバーの表示"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:modeOfIssuance ;
+        sh:minCount 0 ;
+
+        sh:in ("http://rdaregistry.info/termList/ModeIssue/1001" "http://rdaregistry.info/termList/ModeIssue/1002" "http://rdaregistry.info/termList/ModeIssue/1003" "http://rdaregistry.info/termList/ModeIssue/1004") ;
+        sh:description "単独、複数部分での発行、更新方法ないしは終了の決定を反映した分類"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcndl:publicationPeriodicity ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:in ("http://rdaregistry.info/termList/frequency/1001" "http://rdaregistry.info/termList/frequency/1002" "http://rdaregistry.info/termList/frequency/1003" "http://rdaregistry.info/termList/frequency/1004" "http://rdaregistry.info/termList/frequency/1005" "http://rdaregistry.info/termList/frequency/1006" "http://rdaregistry.info/termList/frequency/1007" "http://rdaregistry.info/termList/frequency/1008" "http://rdaregistry.info/termList/frequency/1009" "http://rdaregistry.info/termList/frequency/1010" "http://rdaregistry.info/termList/frequency/1011" "http://rdaregistry.info/termList/frequency/1012" "http://rdaregistry.info/termList/frequency/1013" "http://rdaregistry.info/termList/frequency/1014" "http://rdaregistry.info/termList/frequency/1015" "http://rdaregistry.info/termList/frequency/1016") ;
+        sh:description "リソースの刊行の頻度の分類"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:serialNumber ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "シリアルにおける部分を示す順番に基づく指定"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:volumeNumber ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:description "シリアルにおける出版の巻の指定、もしくは整数による号の指定"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:issueNumber ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:description "シリアルにおける出版の号の指定"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:price ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの供給者による希望小売価格"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:exemplar ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Item ;
+        sh:description "リソースを例示する個別資料"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:downloadUrl ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースを取得するためのウェブサイト"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:created ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの創作に関する日付"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:locationCreated ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの創作に関する場所"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:thumbnailUrl ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "ゲームパッケージのサムネイル画像"@ja ;
+    ] ;
+.
+
+ex:ProvisionActivityShape
+    a sh:NodeShape ;
+    sh:targetClass rcgs:ProvisionActivity ;
+    sh:property [
+        sh:path rcgs:recordID ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの記述単位毎に付与される識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:adminMetadata ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:AdminMetadata ;
+        sh:description "メタデータの管理情報"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdf:type ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in (rcgs:Production rcgs:Publication rcgs:Distribution rcgs:Manufacture) ;
+        sh:description "リソースの一般形による分類（制作、出版、頒布、製造）"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:publisherStatement ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースを発行する主体の表示される名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:date ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class dcterms:W3CDTF ;
+        sh:description "リソースに関連する日付"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:spatial ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースに関連する場所"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "レコードを作成する上で参照したリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:note ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの識別に関する注記"@ja ;
+    ] ;
+.
+
+ex:MediaTypeOrExtentShape
+    a sh:NodeShape ;
+    sh:targetClass dcterms:MediaTypeOrExtent ;
+    sh:property [
+        sh:path rcgs:recordID ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの記述単位毎に付与される識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:adminMetadata ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:AdminMetadata ;
+        sh:description "メタデータの管理情報"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:carrierType ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:in ("http://rdaregistry.info/termList/RDACarrierType/1001" "http://rdaregistry.info/termList/RDACarrierType/1002" "http://rdaregistry.info/termList/RDACarrierType/1003" "http://rdaregistry.info/termList/RDACarrierType/1004" "http://rdaregistry.info/termList/RDACarrierType/1005" "http://rdaregistry.info/termList/RDACarrierType/1006" "http://rdaregistry.info/termList/RDACarrierType/1007" "http://rdaregistry.info/termList/RDACarrierType/1008" "http://rdaregistry.info/termList/RDACarrierType/1010" "http://rdaregistry.info/termList/RDACarrierType/1011" "http://rdaregistry.info/termList/RDACarrierType/1012" "http://rdaregistry.info/termList/RDACarrierType/1013" "http://rdaregistry.info/termList/RDACarrierType/1014" "http://rdaregistry.info/termList/RDACarrierType/1015" "http://rdaregistry.info/termList/RDACarrierType/1016" "http://rdaregistry.info/termList/RDACarrierType/1017" "http://rdaregistry.info/termList/RDACarrierType/1018" "http://rdaregistry.info/termList/RDACarrierType/1020" "http://rdaregistry.info/termList/RDACarrierType/1021" "http://rdaregistry.info/termList/RDACarrierType/1022" "http://rdaregistry.info/termList/RDACarrierType/1023" "http://rdaregistry.info/termList/RDACarrierType/1024" "http://rdaregistry.info/termList/RDACarrierType/1025" "http://rdaregistry.info/termList/RDACarrierType/1026" "http://rdaregistry.info/termList/RDACarrierType/1027" "http://rdaregistry.info/termList/RDACarrierType/1028" "http://rdaregistry.info/termList/RDACarrierType/1029" "http://rdaregistry.info/termList/RDACarrierType/1030" "http://rdaregistry.info/termList/RDACarrierType/1031" "http://rdaregistry.info/termList/RDACarrierType/1032" "http://rdaregistry.info/termList/RDACarrierType/1033" "http://rdaregistry.info/termList/RDACarrierType/1034" "http://rdaregistry.info/termList/RDACarrierType/1035" "http://rdaregistry.info/termList/RDACarrierType/1036" "http://rdaregistry.info/termList/RDACarrierType/1037" "http://rdaregistry.info/termList/RDACarrierType/1039" "http://rdaregistry.info/termList/RDACarrierType/1040" "http://rdaregistry.info/termList/RDACarrierType/1041" "http://rdaregistry.info/termList/RDACarrierType/1042" "http://rdaregistry.info/termList/RDACarrierType/1043" "http://rdaregistry.info/termList/RDACarrierType/1044" "http://rdaregistry.info/termList/RDACarrierType/1045" "http://rdaregistry.info/termList/RDACarrierType/1046" "http://rdaregistry.info/termList/RDACarrierType/1047" "http://rdaregistry.info/termList/RDACarrierType/1048" "http://rdaregistry.info/termList/RDACarrierType/1049" "http://rdaregistry.info/termList/RDACarrierType/1050" "http://rdaregistry.info/termList/RDACarrierType/1051" "http://rdaregistry.info/termList/RDACarrierType/1052" "http://rdaregistry.info/termList/RDACarrierType/1053" "http://rdaregistry.info/termList/RDACarrierType/1056" "http://rdaregistry.info/termList/RDACarrierType/1059" "http://rdaregistry.info/termList/RDACarrierType/1060" "http://rdaregistry.info/termList/RDACarrierType/1069" "http://rdaregistry.info/termList/RDACarrierType/1070" "http://rdaregistry.info/termList/RDACarrierType/1071") ;
+        sh:description "メディアの一般形の種別"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:extent ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "メディアの数量"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:dimension ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "メディアの大きさの測定値"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:encodingFormat ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:MediaFormat ;
+        sh:description "パッケージのメインユニットのメディア形式"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:contentSize ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "メディアのファイルサイズ"@ja ;
+    ] ;
+.
+
+ex:ContributionShape
+    a sh:NodeShape ;
+    sh:targetClass rcgs:Contribution ;
+    sh:property [
+        sh:path rcgs:recordID ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの記述単位毎に付与される識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:adminMetadata ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:AdminMetadata ;
+        sh:description "メタデータの管理情報"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:agent ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:Agent ;
+        sh:description "貢献者である主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path schema:roleName ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "個人や組織が果たした役割"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:agentNameStatement ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの名前の表示や表記"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:actedCharacterName ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "貢献者が演じたキャラクターの名前や名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:actedCharacter ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Topic ;
+        sh:description "貢献者が演じたキャラクターの指定"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:agentAffiliation ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Organization ;
+        sh:description "貢献者がメンバーである主体"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:description ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースに関する説明"@ja ;
+    ] ;
+.
+
+ex:TopicShape
+    a sh:NodeShape ;
+    sh:targetClass rcgs:Topic ;
+    sh:property [
+        sh:path rcgs:recordID ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの記述単位毎に付与される識別子"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:adminMetadata ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class rcgs:AdminMetadata ;
+        sh:description "メタデータの管理情報"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの文字列構造化もしくは符号化による識別のための名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:description "リソースの優先的に用いられる名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:altLabel ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの代替的に用いられる名称"@ja ;
+    ] ;
+    sh:property [
+        sh:path rcgs:category ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの一般化された形式（e.g. テーマ，場所，キャラクター）"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースが所属する概念体系"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:date ;
+        sh:minCount 0 ;
+
+        sh:class dcterms:W3CDTF ;
+        sh:description "リソースに関する日付"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:spatial ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースに関する場所"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:isPartOf ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Topic ;
+        sh:description "リソースを論理的・物理的に部分として持つリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:hasPart ;
+        sh:minCount 0 ;
+
+        sh:class rcgs:Topic ;
+        sh:description "リソースの論理的・物理的な部分であるリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path owl:sameAs ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "全く同じものを示すリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path rdfs:seeAlso ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "同じもしくは関連する外部のリソース"@ja ;
+    ] ;
+    sh:property [
+        sh:path skos:note ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースの識別についての注記"@ja ;
+    ] ;
+.
+
+ex:AdminMetadataShape
+    a sh:NodeShape ;
+    sh:targetClass rcgs:AdminMetadata ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースを作成する上で参照した情報源"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:created ;
+        sh:minCount 0 ;
+
+        sh:class dcterms:W3CDTF ;
+        sh:description "リソースが創造された日付"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:modified ;
+        sh:minCount 0 ;
+
+        sh:class dcterms:W3CDTF ;
+        sh:description "リソースが修正された日付"@ja ;
+    ] ;
+    sh:property [
+        sh:path dcterms:description ;
+        sh:minCount 0 ;
+
+        sh:datatype xsd:string ;
+        sh:description "リソースについての説明"@ja ;
+    ] ;
+.
+

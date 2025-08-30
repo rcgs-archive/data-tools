@@ -12,7 +12,7 @@ RCGS（立命館大学ゲーム研究センター）のアーカイブプロジ�
 ## ドキュメント
 
 ### メタデータスキーマ
-- [SHACL スキーマ仕様書](schema/rcgs_schema_specification/) - メタデータスキーマの詳細仕様
+- [メタデータスキーマ仕様書](schema/rcgs_schema_specification/) - メタデータスキーマの詳細仕様
 - [スキーマ概要](schema/) - メタデータスキーマの概要
 
 ### ツール・スクリプト
@@ -24,9 +24,8 @@ RCGS（立命館大学ゲーム研究センター）のアーカイブプロジ�
 - RDF/SPARQL - RDFデータとSPARQLクエリの利用方法
 
 ## プロジェクト情報
-
 - **GitHub リポジトリ**: [fukudakz/rcgs_archive](https://github.com/fukudakz/rcgs_archive)
-- **組織**: 立命館大学ゲーム研究センター
+- **運営**: 立命館大学ゲーム研究センター
 - **ライセンス**: MIT
 
 ## 更新履歴

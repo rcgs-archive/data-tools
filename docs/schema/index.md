@@ -30,7 +30,7 @@ RCGSアーカイブプロジェクトで使用するメタデータスキーマ�
 
 ## DSP仕様
 
-Digital Scholarship Platform (DSP) の基本仕様に基づいたメタデータ定義です。
+記述セットプロファイル(Description Set Profile:DSP)の基本仕様に基づいたメタデータ定義です。
 
 ## スキーマファイル
 

@@ -1,0 +1,78 @@
+# GitHub Pages Jekyll Configuration
+
+# Site settings
+title: "RCGS Archive Documentation"
+description: "立命館大学ゲーム研究センター アーカイブプロジェクト ドキュメントサイト"
+baseurl: "/rcgs_archive"
+url: "https://fukudakz.github.io"
+
+# Author information
+author:
+  name: "立命館大学ゲーム研究センター"
+  email: "contact@rcgs.jp"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Kramdown settings
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Navigation menu
+header_pages:
+  - schema/index.md
+  - tools/index.md
+  - api/index.md
+
+# Collections for organizing content
+collections:
+  schema:
+    output: true
+    permalink: /:collection/:name/
+  tools:
+    output: true
+    permalink: /:collection/:name/
+  api:
+    output: true
+    permalink: /:collection/:name/
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Include files
+include:
+  - _pages
+
+# GitHub Pages specific settings
+github:
+  repository_url: "https://github.com/fukudakz/rcgs_archive"
+  repository_name: "rcgs_archive"
+
+# SEO and social
+twitter:
+  username: rcgs_archive
+  card: summary
+
+social:
+  name: RCGS
+  links:
+    - https://github.com/fukudakz/rcgs_archive

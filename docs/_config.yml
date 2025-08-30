@@ -7,9 +7,12 @@ baseurl: "/rcgs_archive"
 url: "https://fukudakz.github.io"
 
 # Author information
-author:
-  name: "立命館大学ゲーム研究センター"
-  email: "contact@rcgs.jp"
+author: "立命館大学ゲーム研究センター"
+email: "contact@rcgs.jp"
+
+# Footer information
+footer_name: "立命館大学ゲーム研究センター"
+footer_email: "contact@rcgs.jp"
 
 # Build settings
 markdown: kramdown

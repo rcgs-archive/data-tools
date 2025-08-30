@@ -1,4 +1,7 @@
-# RCGS Archive Documentation
+---
+layout: home
+title: "RCGS Archive Documentation"
+---
 
 RCGS（立命館大学ゲーム研究センター）のアーカイブプロジェクトのドキュメントサイトです。
 
@@ -9,16 +12,16 @@ RCGS（立命館大学ゲーム研究センター）のアーカイブプロジ�
 ## ドキュメント
 
 ### メタデータスキーマ
-- [SHACL スキーマ仕様書](schema/rcgs_schema_specification.html) - メタデータスキーマの詳細仕様
-- [DSP仕様](schema/dsp_specification.html) - Digital Scholarship Platform メタデータ仕様
+- [SHACL スキーマ仕様書](schema/rcgs_schema_specification/) - メタデータスキーマの詳細仕様
+- [スキーマ概要](schema/) - メタデータスキーマの概要
 
 ### ツール・スクリプト
-- [SHACL スキーマ生成](tools/shacl_generation.html) - DSP ExcelからSHACLスキーマを生成するツール
-- [Markdown変換](tools/markdown_conversion.html) - SHACLスキーマをMarkdown形式に変換するツール
+- [ツール概要](tools/) - DSP ExcelからSHACLスキーマを生成するツールなど
+- 自動変換ツール - SHACLスキーマをMarkdown形式に変換
 
 ### API・データ
-- [データ形式](api/data_formats.html) - 利用可能なデータ形式の説明
-- [RDF/SPARQL](api/rdf_sparql.html) - RDFデータとSPARQLクエリの利用方法
+- [API・データ形式](api/) - 利用可能なデータ形式とアクセス方法の説明
+- RDF/SPARQL - RDFデータとSPARQLクエリの利用方法
 
 ## プロジェクト情報
 

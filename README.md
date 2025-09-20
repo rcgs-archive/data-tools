@@ -1,10 +1,10 @@
-# RCGS Archive
+# RCGS Archive Data Tools
 
-立命館大学ゲーム研究センター（RCGS）のゲームアーカイブプロジェクト
+立命館大学ゲーム研究センター（RCGS）のアーカイブデータおよびデータ処理ツール
 
 ## 📖 ドキュメント
 
-**🌐 GitHub Pages**: https://fukudakz.github.io/rcgs_archive/
+**🌐 GitHub Pages**: https://rcgs-archive.github.io/data-tools/
 
 完全なドキュメントとスキーマ仕様書はGitHub Pagesサイトで公開しています。
 
@@ -22,7 +22,7 @@
 ## 🗂️ ディレクトリ構造
 
 ```
-rcgs_archive/
+data-tools/
 ├── docs/                          # GitHub Pages ドキュメント
 │   ├── schema/                    # メタデータスキーマ仕様
 │   ├── tools/                     # ツール・スクリプト説明
@@ -31,6 +31,8 @@ rcgs_archive/
 ├── src/                           # ソースコード
 │   └── shacl_and_validation/      # SHACL関連ツール
 ├── metadata_schema/               # スキーマファイル
+├── ontology/                      # オントロジーファイル
+├── open_data/                     # オープンデータ
 └── README.md                      # このファイル
 ```
 
@@ -51,21 +53,6 @@ python shacl_to_markdown.py
 ```
 
 SHACL TTLファイルからMarkdown形式の仕様書を生成します。
-
-## 📊 メタデータスキーマ
-
-### クラス階層
-- **Work** (作品): ゲーム作品の基本情報
-- **Variation** (バリエーション): 作品の版や移植版
-- **Package** (パッケージ): 物理的・デジタル的な配布形態
-- **Item** (個別資料): 具体的なコレクション資料
-
-### その他のクラス
-- **Agent** (主体): 個人・組織情報
-- **Platform** (プラットフォーム): ゲーム機・システム
-- **Device** (装置): ハードウェア機器
-- **Topic** (主題): ジャンル・テーマ・キャラクター
-- その他11クラス
 
 ## 🌐 データ形式
 
@@ -99,6 +86,12 @@ MIT License - 詳細は [LICENSE](LICENSE) ファイルを参照してくださ�
 
 プロジェクトへの貢献を歓迎します。Issues やPull Requestsをお気軽にお送りください。
 
+## 🔗 関連リンク
+
+- **GitHub Organization**: https://github.com/rcgs-archive
+- **リポジトリ**: https://github.com/rcgs-archive/data-tools
+- **GitHub Pages**: https://rcgs-archive.github.io/data-tools/
+
 ---
 
-**詳細なドキュメント**: https://fukudakz.github.io/rcgs_archive/
+**詳細なドキュメント**: https://rcgs-archive.github.io/data-tools/

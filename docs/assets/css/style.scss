@@ -1,0 +1,81 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Custom styles for RCGS Archive Data Tools */
+
+.site-header {
+  border-top: 5px solid #424242;
+  border-bottom: 1px solid #e8e8e8;
+  min-height: 55.95px;
+  position: relative;
+}
+
+.site-title {
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 54px;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  float: left;
+}
+
+.page-content {
+  padding: 30px 0;
+  flex: 1 0 auto;
+}
+
+.home h1 {
+  font-size: 48px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.home h2 {
+  color: #666;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.post-list {
+  margin-left: 0;
+  list-style: none;
+}
+
+code {
+  background-color: #f5f5f5;
+  border: 1px solid #e1e1e8;
+  border-radius: 3px;
+  padding: 1px 5px;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  overflow-x: auto;
+  padding: 12px;
+}
+
+.highlight {
+  background: #f8f8f8;
+  border-radius: 3px;
+  padding: 12px;
+  overflow-x: auto;
+}
+
+.footer-col {
+  width: -webkit-calc(100% - (30px / 2));
+  width: calc(100% - (30px / 2));
+  margin-bottom: 15px;
+  padding-left: 15px;
+}
+
+@media screen and (max-width: 800px) {
+  .footer-col {
+    float: none;
+    width: -webkit-calc(100% - (30px / 2));
+    width: calc(100% - (30px / 2));
+  }
+}

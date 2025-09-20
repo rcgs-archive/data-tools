@@ -1,10 +1,10 @@
 # GitHub Pages Jekyll Configuration
 
 # Site settings
-title: "RCGS Archive Documentation"
-description: "立命館大学ゲーム研究センター アーカイブプロジェクト ドキュメントサイト"
-baseurl: "/rcgs_archive"
-url: "https://fukudakz.github.io"
+title: "RCGS Archive Data Tools"
+description: "立命館大学ゲーム研究センター アーカイブデータ・ツール ドキュメントサイト"
+baseurl: "/data-tools"
+url: "https://rcgs-archive.github.io"
 
 # Author information
 author: "立命館大学ゲーム研究センター"
@@ -67,8 +67,8 @@ include:
 
 # GitHub Pages specific settings
 github:
-  repository_url: "https://github.com/fukudakz/rcgs_archive"
-  repository_name: "rcgs_archive"
+  repository_url: "https://github.com/rcgs-archive/data-tools"
+  repository_name: "data-tools"
 
 # SEO and social
 twitter:
@@ -78,4 +78,4 @@ twitter:
 social:
   name: RCGS
   links:
-    - https://github.com/fukudakz/rcgs_archive
+    - https://github.com/rcgs-archive/data-tools

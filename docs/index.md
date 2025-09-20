@@ -1,9 +1,9 @@
 ---
 layout: home
-title: "RCGS Archive Documentation"
+title: "RCGS Archive Data Tools"
 ---
 
-RCGS（立命館大学ゲーム研究センター）のアーカイブプロジェクトのドキュメントサイトです。
+RCGS（立命館大学ゲーム研究センター）のアーカイブデータ・ツールのドキュメントサイトです。
 
 ## 概要
 
@@ -24,7 +24,8 @@ RCGS（立命館大学ゲーム研究センター）のアーカイブプロジ�
 - RDF/SPARQL - RDFデータとSPARQLクエリの利用方法
 
 ## プロジェクト情報
-- **GitHub リポジトリ**: [fukudakz/rcgs_archive](https://github.com/fukudakz/rcgs_archive)
+- **GitHub Organization**: [rcgs-archive](https://github.com/rcgs-archive)
+- **GitHub リポジトリ**: [rcgs-archive/data-tools](https://github.com/rcgs-archive/data-tools)
 - **運営**: 立命館大学ゲーム研究センター
 - **ライセンス**: MIT
 

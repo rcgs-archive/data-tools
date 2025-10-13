@@ -1,0 +1,66 @@
+@prefix rcgs: <https://collection.rcgs.jp/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix schema: <https://www.schema.org/> .
+@prefix refp: <https://collection.rcgs.jp/refp/> .
+
+
+<https://collection.rcgs.jp/refp/>
+    a owl:Ontology ;
+    rdfs:label "レファレンスポイント語彙"@ja ,"Reference Point Terms"@en ;
+    skos:definition "レフェレンス記録のための語彙"@ja ;
+    vann:preferredNamespacePrefix "refp" ;
+    vann:preferredNamespaceUri <https://collection.rcgs.jp/refp/> ;
+    owl:versionInfo "1.8" ;
+    dcterms:created "2025-10-10"^^xsd:date ;
+    dcterms:license "CC0 1.0 Universal" .
+
+
+######### Classes #########
+
+refp:ReferenceCase a owl:Class ;
+    rdfs:label "リファレンス事例"@ja .
+
+######### Property #########
+
+refp:question a owl:DatatypeProperty ;
+    rdfs:label "質問"@ja ;
+    skos:definition "「質問」の値"@ja .
+
+refp:answer a owl:DatatypeProperty ;
+    rdfs:label "回答"@ja ;
+    skos:definition "「回答」の値"@ja .
+
+refp:accessLevel a owl:DatatypeProperty ;
+    rdfs:label "公開レベル"@ja . 
+
+refp:ndcVersion a owl:DatatypeProperty ;
+    rdfs:label "NDCのバージョン"@ja . 
+
+refp:ndc a owl:DatatypeProperty ;
+    rdfs:label "NDC"@ja . 
+
+refp:inquiryType a owl:DatatypeProperty ;
+    rdfs:label "調査種別"@ja . 
+
+refp:answerProcess a owl:DatatypeProperty ;
+    rdfs:label "回答プロセス"@ja . 
+
+refp:referredTo a owl:DatatypeProperty ;
+    rdfs:label "照会先"@ja . 
+
+refp:preliminaryResearch a owl:DatatypeProperty ;
+    rdfs:label "事前調査事項"@ja .
+
+refp:userCategory a owl:DatatypeProperty ;
+    rdfs:label "質問者区分"@ja .
+
+
+

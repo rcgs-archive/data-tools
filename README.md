@@ -93,8 +93,7 @@ pip install pandas rdflib pyshacl openpyxl
 
 ## 🔗 関連リンク
 
-- **GitHub Organization**: https://github.com/rcgs-archive
-- **リポジトリ**: https://github.com/rcgs-archive/data-tools
+- **RCGSコレクション**: https://collection.rcgs.jp/
 - **GitHub Pages**: https://rcgs-archive.github.io/data-tools/
 
 ---

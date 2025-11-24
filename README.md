@@ -84,8 +84,7 @@ pip install pandas rdflib pyshacl openpyxl
 ## 🏛️ 組織
 
 **立命館大学ゲーム研究センター（RCGS）**
-- 研究・アーカイブ活動
-- デジタルゲーム文化の保存と研究
+- https://rcgs.jp/
 
 ## 🤝 コントリビューション
 
@@ -95,7 +94,3 @@ pip install pandas rdflib pyshacl openpyxl
 
 - **RCGSコレクション**: https://collection.rcgs.jp/
 - **GitHub Pages**: https://rcgs-archive.github.io/data-tools/
-
----
-
-**詳細なドキュメント**: https://rcgs-archive.github.io/data-tools/

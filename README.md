@@ -73,8 +73,13 @@ pip install pandas rdflib pyshacl openpyxl
 - Git
 
 ## 📄 ライセンス
+このリポジトリは コンテンツの種類ごとに異なるライセンス を適用しています。
 
-MIT License - 詳細は [LICENSE](LICENSE) ファイルを参照してください。
+- ドキュメント（仕様書・説明文書など）
+  - Creative Commons Attribution 4.0 International (CC BY 4.0) https://creativecommons.org/licenses/by/4.0/
+
+- プログラムコード（/src 以下のPythonスクリプト等）
+  - MIT License
 
 ## 🏛️ 組織
 

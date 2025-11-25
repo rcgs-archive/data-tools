@@ -27,8 +27,7 @@ python parse-discord.py /path/to/your/log.txt
 ```
 
 ## 入力ファイル形式
-
-Discordのログをそのままテキストファイルに貼り付けてください。
+Discordのログをそのままテキストファイルとして保存してください。そのファイルを上記のように指定して実行してください。
 
 ```
 XXXXX — 

@@ -585,7 +585,7 @@ ex:VariationShape
         sh:path dcterms:language ;
         sh:name "言語"@ja ;
         sh:minCount 0 ;
-        sh:class http://id.loc.gov/vocabulary/iso639-2 ;
+        sh:class <http://id.loc.gov/vocabulary/iso639-2> ;
         sh:description "リソースの内容の言語"@ja ;
     ] ;
     sh:property [
@@ -840,7 +840,7 @@ ex:PackageShape
         sh:name "種別"@ja ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:in ("rcgs:PhysicalPackage", "rcgs:OnlinePackage") ;
+        sh:in (rcgs:PhysicalPackage rcgs:OnlinePackage) ;
         sh:description "リソースが属するサブクラス"@ja ;
     ] ;
     sh:property [
@@ -1532,7 +1532,7 @@ ex:AgentShape
         sh:path dcterms:language ;
         sh:name "言語"@ja ;
         sh:minCount 0 ;
-        sh:class http://id.loc.gov/vocabulary/iso639-2 ;
+        sh:class <http://id.loc.gov/vocabulary/iso639-2> ;
         sh:description "リソースが表現や記録に用いる言語"@ja ;
     ] ;
     sh:property [
@@ -1872,7 +1872,7 @@ ex:DeviceShape
         sh:name "サブタイプ"@ja ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:in ("rcgs:GameDevice", "rcgs:PeripheralEquipment") ;
+        sh:in (rcgs:GameDevice rcgs:PeripheralEquipment) ;
         sh:description "リソースが所属するクラスにおけるサブタイプの指定"@ja ;
     ] ;
     sh:property [
@@ -2576,7 +2576,7 @@ ex:RelatedInstanceShape
         sh:path dcterms:language ;
         sh:name "言語"@ja ;
         sh:minCount 0 ;
-        sh:class http://id.loc.gov/vocabulary/iso639-2 ;
+        sh:class <http://id.loc.gov/vocabulary/iso639-2> ;
         sh:description "リソースの内容で用いられる言語"@ja ;
     ] ;
     sh:property [
@@ -2773,7 +2773,7 @@ ex:ProvisionActivityShape
         sh:name "種別"@ja ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:in ("rcgs:Production" "rcgs:Publication" "rcgs:Distribution" "rcgs:Manufacture") ;
+        sh:in (rcgs:Production rcgs:Publication rcgs:Distribution rcgs:Manufacture) ;
         sh:description "リソースの一般形による分類（制作、出版、頒布、製造）"@ja ;
     ] ;
     sh:property [
@@ -3017,7 +3017,7 @@ ex:TopicShape
         sh:description "リソースに関する日付"@ja ;
     ] ;
     sh:property [
-        sh:path dctems:spatial ;
+        sh:path dcterms:spatial ;
         sh:name "地理的範囲"@ja ;
         sh:minCount 0 ;
         sh:datatype xsd:string ;

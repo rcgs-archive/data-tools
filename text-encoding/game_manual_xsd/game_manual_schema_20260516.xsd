@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+  <xs:element name="manual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="page" type="PageType" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="title" type="xs:string" use="required"/>
+      <xs:attribute name="lang" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="PageType">
+    <xs:sequence>
+      <xs:element name="section" type="SectionType" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="number" type="xs:positiveInteger" use="required"/>
+    <xs:attribute name="img" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="SectionType">
+    <xs:sequence>
+      <xs:element name="head" type="InlineContentType" minOccurs="0"/>
+      <xs:element name="p" type="InlineContentType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="subsection" type="SectionType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="optional"/>
+    <xs:attribute name="type" type="SectionKindType" use="optional"/>
+  </xs:complexType>
+
+  <xs:simpleType name="SectionKindType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="character">
+        <xs:annotation>
+          <xs:documentation xml:lang="ja">ゲーム内に登場するキャラクター</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="company_info">
+        <xs:annotation>
+          <xs:documentation xml:lang="ja">発行者などの企業情報</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="control">
+        <xs:annotation>
+          <xs:documentation xml:lang="ja">ボタン配置やゲーム操作の説明</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cover">
+        <xs:annotation>
+          <xs:documentation xml:lang="ja">表紙</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="item">
+        <xs:annotation>
+          <xs:documentation xml:lang="ja">ゲーム内のアイテム・武器などのリスト</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="legal">
+        <xs:annotation>
+          <xs:documentation xml:lang="ja">著作権など法的制限に関する記述</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="narrative">
+        <xs:annotation>
+          <xs:documentation xml:lang="ja">あらすじや導入的ストーリーなどの物語の記述</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="preface">
+        <xs:annotation>
+          <xs:documentation xml:lang="ja">序文、ただし物語を含まない</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="reference">
+        <xs:annotation>
+          <xs:documentation xml:lang="ja">参考情報</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="system">
+        <xs:annotation>
+          <xs:documentation xml:lang="ja">ゲームのルール、画面の見方、ゲームサイクルなど操作情報以外のゲームシステムの説明</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="toc">
+        <xs:annotation>
+          <xs:documentation xml:lang="ja">目次</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="warning">
+        <xs:annotation>
+          <xs:documentation xml:lang="ja">安全上の注意や免責事項</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="credit">
+        <xs:annotation>
+          <xs:documentation xml:lang="ja">創作に関する責任の表示などクレジットの表示</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="InlineContentType" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="ruby" type="RubyType"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:simpleType name="RubyKindType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="reading"/>
+      <xs:enumeration value="gloss"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="RubyType" mixed="true">
+    <xs:sequence>
+      <xs:element name="rt" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="type" type="RubyKindType" use="required"/>
+  </xs:complexType>
+
+</xs:schema>

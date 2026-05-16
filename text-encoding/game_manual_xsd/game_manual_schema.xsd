@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+  <!-- ルート要素 manual -->
+  <xs:element name="manual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="page" type="PageType" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="title" type="xs:string" use="required"/>
+      <xs:attribute name="lang" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ページ -->
+  <xs:complexType name="PageType">
+    <xs:sequence>
+      <xs:element name="section" type="SectionType" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="number" type="xs:positiveInteger" use="required"/>
+    <xs:attribute name="img" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <!-- セクション -->
+  <xs:complexType name="SectionType">
+    <xs:sequence>
+      <xs:element name="head" type="InlineContentType"/>
+      <xs:element name="p" type="InlineContentType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="subsection" type="SectionType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="optional"/>
+    <xs:attribute name="type" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <!-- インラインコンテンツ（本文にルビなどを含む） -->
+  <xs:complexType name="InlineContentType" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="ruby" type="RubyType"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <!-- ルビの種類: reading=読み（振り仮名）, gloss=読み替え（別名・訳語） -->
+  <xs:simpleType name="RubyKindType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="reading"/>
+      <xs:enumeration value="gloss"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ルビ: 例 <ruby type="reading">漢字<rt>かんじ</rt></ruby>, <ruby type="gloss">火球<rt>ファイアーボール</rt></ruby> -->
+  <xs:complexType name="RubyType" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="rt" type="xs:string"/>
+    </xs:choice>
+    <xs:attribute name="type" type="RubyKindType" use="optional" default="reading"/>
+  </xs:complexType>
+
+</xs:schema>

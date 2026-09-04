@@ -26,7 +26,6 @@
     <xs:sequence>
       <xs:element name="head" type="InlineContentType" minOccurs="0"/>
       <xs:element name="p" type="InlineContentType" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="subsection" type="SectionType" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
     <xs:attribute name="id" type="xs:ID" use="optional"/>
     <xs:attribute name="type" type="SectionKindType" use="optional"/>
@@ -102,9 +101,30 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <!-- インラインコンテンツ定義の拡張 -->
   <xs:complexType name="InlineContentType" mixed="true">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
       <xs:element name="ruby" type="RubyType"/>
+      <xs:element name="persName" type="InlineContentType">
+        <xs:annotation>
+          <xs:documentation xml:lang="ja">人物の名前</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="orgName" type="InlineContentType">
+        <xs:annotation>
+          <xs:documentation xml:lang="ja">組織の名称</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="location" type="InlineContentType">
+        <xs:annotation>
+          <xs:documentation xml:lang="ja">場所の名前</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="namedObject" type="InlineContentType">
+        <xs:annotation>
+          <xs:documentation xml:lang="ja">ゲーム内アイテムのように固有の名前の付いたオブジェクト</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:choice>
   </xs:complexType>
 

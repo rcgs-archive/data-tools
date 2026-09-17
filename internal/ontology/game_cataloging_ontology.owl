@@ -954,7 +954,7 @@ gc:publisher a owl:ObjectProperty ;
     rdfs:range foaf:Agent .
 
 gc:publisherName a owl:DatatypeProperty ;
-    rdfs:label "頒布者名"@ja , "Publisher Name"@en ;
+    rdfs:label "出版者名"@ja , "Publisher Name"@en ;
     skos:definition "目録対象リソースに関する頒布者名の情報"@ja ;
     rdfs:domain gc:Thing ;
     rdfs:range rdfs:Literal .
@@ -990,8 +990,8 @@ gc:requirementsType a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal .
 
 gc:resourceIdentifier a owl:DatatypeProperty ;
-    rdfs:label "レコードI"@ja , "Resource IDentifier"@en ;
-    skos:definition "目録対象リソースに関するレコードIの情報"@ja ;
+    rdfs:label "レコードID"@ja , "Resource IDentifier"@en ;
+    skos:definition "目録対象リソースに関するレコードIDの情報"@ja ;
     rdfs:domain gc:Package ;
     rdfs:range rdfs:Literal .
 
@@ -1025,6 +1025,12 @@ gc:setting a owl:DatatypeProperty ;
     rdfs:domain gc:Work ;
     rdfs:range rdfs:Literal .
 
+gc:sound a owl:DatatypeProperty ;
+    rdfs:label "音声出力"@ja , "Sound"@en ;
+    skos:definition "装置の音声出力に関する仕様"@ja , "Specification of a device's audio output"@en ;
+    rdfs:domain gc:Device ;
+    rdfs:range rdfs:Literal .
+
 gc:soundCard a owl:DatatypeProperty ;
     rdfs:label "サウンドカード"@ja , "Sound Card"@en ;
     skos:definition "目録対象リソースに関するサウンドカードの情報"@ja ;
@@ -1039,12 +1045,6 @@ gc:specConnection a owl:DatatypeProperty ;
 
 gc:storage a owl:DatatypeProperty ;
     rdfs:label "ストレージ"@ja , "Storage"@en ;
-    skos:definition "目録対象リソースに関するストレージの情報"@ja ;
-    rdfs:domain gc:Instance ;
-    rdfs:range rdfs:Literal .
-
-gc:strage a owl:DatatypeProperty ;
-    rdfs:label "ストレージ"@ja , "Strage"@en ;
     skos:definition "目録対象リソースに関するストレージの情報"@ja ;
     rdfs:domain gc:Instance ;
     rdfs:range rdfs:Literal .

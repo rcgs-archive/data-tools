@@ -378,8 +378,8 @@ gc:activityPeriod a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal .
 
 gc:actorName a owl:DatatypeProperty ;
-    rdfs:label "貢献者actedCharactor統合"@ja , "Actor Name"@en ;
-    skos:definition "目録対象リソースに関する貢献者actedCharactor統合の情報"@ja ;
+    rdfs:label "演者名"@ja , "Actor Name"@en ;
+    skos:definition "目録対象リソースに関する演者の名前"@ja ;
     rdfs:domain gc:Variation ;
     rdfs:range rdfs:Literal .
 
@@ -396,13 +396,13 @@ gc:adultOrNot a owl:DatatypeProperty ;
     rdfs:range xsd:boolean .
 
 gc:agentName a owl:DatatypeProperty ;
-    rdfs:label "AgentName"@ja , "Agent Name"@en ;
+    rdfs:label "エージェント名"@ja , "Agent Name"@en ;
     skos:definition "目録対象リソースに関するAgentNameの情報"@ja ;
     rdfs:domain gc:Contributor ;
     rdfs:range rdfs:Literal .
 
 gc:appleStore a owl:DatatypeProperty ;
-    rdfs:label "AppleStoreI"@ja , "Apple Store"@en ;
+    rdfs:label "AppleStoreID"@ja , "Apple Store"@en ;
     skos:definition "目録対象リソースに関するAppleStoreIの情報"@ja ;
     rdfs:domain foaf:Agent ;
     rdfs:range rdfs:Literal .
@@ -460,13 +460,13 @@ gc:contentType a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal .
 
 gc:contributeVariation a owl:ObjectProperty ;
-    rdfs:label "gc:recordID (Variation)"@ja , "Contribute Variation"@en ;
+    rdfs:label "貢献したバリエーション"@ja , "Contribute Variation"@en ;
     skos:definition "目録対象リソースに関するgc:recordID (Variation)の情報"@ja ;
     rdfs:domain gc:Contributor ;
     rdfs:range gc:Variation .
 
 gc:contributor a owl:DatatypeProperty ;
-    rdfs:label "スタッフ（文字列）"@ja , "Contributor"@en ;
+    rdfs:label "スタッフ"@ja , "Contributor"@en ;
     skos:definition "目録対象リソースに関するスタッフ（文字列）の情報"@ja ;
     rdfs:domain gc:Variation ;
     rdfs:range rdfs:Literal .
@@ -484,22 +484,22 @@ gc:creator a owl:ObjectProperty ;
     rdfs:range foaf:Agent .
 
 gc:dataCreated a owl:DatatypeProperty ;
-    rdfs:label "エントリ作成時"@ja , "Data Created"@en ;
+    rdfs:label "データ作成時"@ja , "Data Created"@en ;
     skos:definition "目録対象リソースに関するエントリ作成時の情報"@ja ;
     rdfs:range xsd:dateTime .
 
 gc:dataCreator a owl:ObjectProperty ;
-    rdfs:label "エントリ作成者"@ja , "Data Creator"@en ;
+    rdfs:label "データ作成者"@ja , "Data Creator"@en ;
     skos:definition "目録対象リソースに関するエントリ作成者の情報"@ja ;
     rdfs:range foaf:Agent .
 
 gc:dataModified a owl:DatatypeProperty ;
-    rdfs:label "エントリ修正時"@ja , "Data Modified"@en ;
+    rdfs:label "データ修正時"@ja , "Data Modified"@en ;
     skos:definition "目録対象リソースに関するエントリ修正時の情報"@ja ;
     rdfs:range xsd:dateTime .
 
 gc:dataModifier a owl:ObjectProperty ;
-    rdfs:label "エントリ修正者"@ja , "Data Modifier"@en ;
+    rdfs:label "データ修正者"@ja , "Data Modifier"@en ;
     skos:definition "目録対象リソースに関するエントリ修正者の情報"@ja ;
     rdfs:domain gc:Thing ;
     rdfs:range foaf:Agent .
@@ -517,7 +517,7 @@ gc:datePublished a owl:DatatypeProperty ;
     rdfs:range xsd:date .
 
 gc:dateSourceAccessed a owl:DatatypeProperty ;
-    rdfs:label "AccessDate"@ja , "Date Source Accessed"@en ;
+    rdfs:label "情報源アクセス日"@ja , "Date Source Accessed"@en ;
     skos:definition "目録対象リソースに関するAccessDateの情報"@ja ;
     rdfs:domain gc:Contributor ;
     rdfs:range xsd:date .
@@ -535,7 +535,7 @@ gc:deviceImplimented a owl:ObjectProperty ;
     rdfs:range gc:Device .
 
 gc:deviceType a owl:ObjectProperty ;
-    rdfs:label "種別_UR"@ja , "Device Type"@en ;
+    rdfs:label "デバイス種別"@ja , "Device Type"@en ;
     skos:definition "目録対象リソースに関する種別_URの情報"@ja ;
     rdfs:domain gc:Device ;
     rdfs:range gc:Device .
@@ -559,7 +559,7 @@ gc:dimension a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal .
 
 gc:directx a owl:DatatypeProperty ;
-    rdfs:label "DirectX"@ja , "Directx"@en ;
+    rdfs:label "Direct X"@ja , "Direct X"@en ;
     skos:definition "目録対象リソースに関するDirectXの情報"@ja ;
     rdfs:domain gc:Instance ;
     rdfs:range rdfs:Literal .
@@ -583,7 +583,7 @@ gc:displaySize a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal .
 
 gc:distributionSource a owl:DatatypeProperty ;
-    rdfs:label "頒布日取得元出力用"@ja , "Distribution Source"@en ;
+    rdfs:label "頒布活動情報源"@ja , "Distribution Source"@en ;
     skos:definition "目録対象リソースに関する頒布日取得元出力用の情報"@ja ;
     rdfs:domain gc:Instance ;
     rdfs:range rdfs:Literal .
@@ -595,7 +595,7 @@ gc:distributor a owl:ObjectProperty ;
     rdfs:range foaf:Agent .
 
 gc:domesticOrNot a owl:DatatypeProperty ;
-    rdfs:label "国内外"@ja , "Domestic Or Not"@en ;
+    rdfs:label "国内・国外"@ja , "Domestic Or Not"@en ;
     skos:definition "目録対象リソースに関する国内外の情報"@ja ;
     rdfs:domain gc:Instance ;
     rdfs:range rdfs:Literal .
@@ -673,7 +673,7 @@ gc:freebase a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal .
 
 gc:googlePlay a owl:ObjectProperty ;
-    rdfs:label "GooglePlayI"@ja , "Google Play"@en ;
+    rdfs:label "GooglePlay"@ja , "Google Play"@en ;
     skos:definition "目録対象リソースに関するGooglePlayIの情報"@ja ;
     rdfs:domain foaf:Agent ;
     rdfs:range rdfs:Resource .
@@ -685,7 +685,7 @@ gc:graphic a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal .
 
 gc:grid a owl:ObjectProperty ;
-    rdfs:label "GRID I"@ja , "Grid"@en ;
+    rdfs:label "GRID ID"@ja , "Grid"@en ;
     skos:definition "目録対象リソースに関するGRID Iの情報"@ja ;
     rdfs:domain foaf:Agent ;
     rdfs:range rdfs:Resource .
@@ -703,13 +703,13 @@ gc:inserts a owl:ObjectProperty ;
     rdfs:range gc:Package .
 
 gc:isni a owl:DatatypeProperty ;
-    rdfs:label "ISN"@ja , "Isni"@en ;
+    rdfs:label "ISNI"@ja , "Isni"@en ;
     skos:definition "目録対象リソースに関するISNの情報"@ja ;
     rdfs:domain foaf:Agent ;
     rdfs:range rdfs:Literal .
 
 gc:issueNumber a owl:DatatypeProperty ;
-    rdfs:label "号"@ja , "Issue Number"@en ;
+    rdfs:label "号次"@ja , "Issue Number"@en ;
     skos:definition "目録対象リソースに関する号の情報"@ja ;
     rdfs:domain gc:Instance ;
     rdfs:range rdfs:Literal .
@@ -733,13 +733,13 @@ gc:keywords a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal .
 
 gc:mainUnitMediaType a owl:DatatypeProperty ;
-    rdfs:label "メディア種別 メインユニット"@ja , "Main Unit Media Type"@en ;
+    rdfs:label "メディア種別 - メインユニット"@ja , "Main Unit Media Type"@en ;
     skos:definition "目録対象リソースに関するメディア種別 メインユニットの情報"@ja ;
     rdfs:domain gc:Instance ;
     rdfs:range rdfs:Literal .
 
 gc:mainUnitTypeQuantity a owl:DatatypeProperty ;
-    rdfs:label "メディア種別と数量 メインユニット"@ja , "Main Unit Type Quantity"@en ;
+    rdfs:label "メディア種別と数量 - メインユニット"@ja , "Main Unit Type Quantity"@en ;
     skos:definition "目録対象リソースに関するメディア種別と数量 メインユニットの情報"@ja ;
     rdfs:domain gc:Instance ;
     rdfs:range rdfs:Literal .
@@ -751,7 +751,7 @@ gc:mechanic a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal .
 
 gc:memberOf a owl:ObjectProperty ;
-    rdfs:label "member Of"@ja , "Member Of"@en ;
+    rdfs:label "メンバーである団体"@ja , "Member Of"@en ;
     skos:definition "目録対象リソースに関するmember Ofの情報"@ja ;
     rdfs:range foaf:Organization .
 
@@ -774,7 +774,7 @@ gc:middlewareOrGameEngine a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal .
 
 gc:mobyGames a owl:DatatypeProperty ;
-    rdfs:label "Mobygames I"@ja , "Moby Games"@en ;
+    rdfs:label "Mobygames ID"@ja , "Moby Games"@en ;
     skos:definition "目録対象リソースに関するMobygames Iの情報"@ja ;
     rdfs:domain gc:Work ;
     rdfs:range rdfs:Literal .
@@ -846,13 +846,13 @@ gc:networkDisplay a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal .
 
 gc:notPublishingID a owl:DatatypeProperty ;
-    rdfs:label "GPIr"@ja , "Not Publishing ID"@en ;
+    rdfs:label "非公開ID"@ja , "Not Publishing ID"@en ;
     skos:definition "目録対象リソースに関するGPIrの情報"@ja ;
     rdfs:domain gc:Instance ;
     rdfs:range rdfs:Literal .
 
 gc:note a owl:DatatypeProperty ;
-    rdfs:label "個別装置の大きさに関する注記"@ja , "Note"@en ;
+    rdfs:label "注記"@ja , "Note"@en ;
     skos:definition "目録対象リソースに関する個別装置の大きさに関する注記の情報"@ja ;
     rdfs:domain gc:Item ;
     rdfs:range rdfs:Literal .
@@ -870,7 +870,7 @@ gc:onlineManual a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal .
 
 gc:os a owl:DatatypeProperty ;
-    rdfs:label "オペレーティングシステム"@ja , "Os"@en ;
+    rdfs:label "オペレーティングシステム"@ja , "Operating System"@en ;
     skos:definition "目録対象リソースに関するオペレーティングシステムの情報"@ja ;
     rdfs:domain gc:Instance ;
     rdfs:range rdfs:Literal .
@@ -882,7 +882,7 @@ gc:parallelTitle a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal .
 
 gc:partOfWork a owl:DatatypeProperty ;
-    rdfs:label "Description (partOfWork)"@ja , "Part Of Work"@en ;
+    rdfs:label "作品の一部"@ja , "Part Of Work"@en ;
     skos:definition "目録対象リソースに関するDescription (partOfWork)の情報"@ja ;
     rdfs:domain gc:Contributor ;
     rdfs:range rdfs:Literal .
@@ -972,7 +972,7 @@ gc:relatedOrganization a owl:ObjectProperty ;
     rdfs:range foaf:Organization .
 
 gc:requiredStrage a owl:DatatypeProperty ;
-    rdfs:label "HDD容量"@ja , "Required Strage"@en ;
+    rdfs:label "ストレージ容量"@ja , "Required Strage"@en ;
     skos:definition "目録対象リソースに関するHDD容量の情報"@ja ;
     rdfs:domain gc:Device ;
     rdfs:range rdfs:Literal .
@@ -990,7 +990,7 @@ gc:requirementsType a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal .
 
 gc:resourceIdentifier a owl:DatatypeProperty ;
-    rdfs:label "レコードID"@ja , "Resource IDentifier"@en ;
+    rdfs:label "リソースID"@ja , "Resource IDentifier"@en ;
     skos:definition "目録対象リソースに関するレコードIDの情報"@ja ;
     rdfs:domain gc:Package ;
     rdfs:range rdfs:Literal .
@@ -1050,13 +1050,13 @@ gc:storage a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal .
 
 gc:subUnitMediaType a owl:DatatypeProperty ;
-    rdfs:label "メディア種別 サブユニット"@ja , "Sub Unit Media Type"@en ;
+    rdfs:label "メディア種別 - サブユニット"@ja , "Sub Unit Media Type"@en ;
     skos:definition "目録対象リソースに関するメディア種別 サブユニットの情報"@ja ;
     rdfs:domain gc:Instance ;
     rdfs:range rdfs:Literal .
 
 gc:subUnitTypeQuantity a owl:DatatypeProperty ;
-    rdfs:label "メディア種別と数量 サブユニット"@ja , "Sub Unit Type Quantity"@en ;
+    rdfs:label "メディア種別と数量 - サブユニット"@ja , "Sub Unit Type Quantity"@en ;
     skos:definition "目録対象リソースに関するメディア種別と数量 サブユニットの情報"@ja ;
     rdfs:domain gc:Instance ;
     rdfs:range rdfs:Literal .
@@ -1092,13 +1092,13 @@ gc:theme a owl:ObjectProperty ;
     rdfs:range gc:Topic .
 
 gc:thumbnail a owl:DatatypeProperty ;
-    rdfs:label "書影_openB"@ja , "Thumbnail"@en ;
+    rdfs:label "サムネイル"@ja , "Thumbnail"@en ;
     skos:definition "目録対象リソースに関する書影_openBの情報"@ja ;
     rdfs:domain gc:Instance ;
     rdfs:range rdfs:Literal .
 
 gc:twitch a owl:DatatypeProperty ;
-    rdfs:label "twitchI"@ja , "Twitch"@en ;
+    rdfs:label "twitch ID"@ja , "Twitch ID"@en ;
     skos:definition "目録対象リソースに関するtwitchIの情報"@ja ;
     rdfs:domain gc:Work ;
     rdfs:range rdfs:Literal .
@@ -1110,7 +1110,7 @@ gc:twitterID a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal .
 
 gc:uri a owl:DatatypeProperty ;
-    rdfs:label "UR"@ja , "URI"@en ;
+    rdfs:label "URI"@ja , "URI"@en ;
     skos:definition "目録対象リソースに関するURの情報"@ja ;
     rdfs:domain gc:Instance ;
     rdfs:range rdfs:Resource .

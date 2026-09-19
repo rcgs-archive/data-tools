@@ -8,30 +8,33 @@ use Laminas\EventManager\SharedEventManagerInterface;
 
 class Module extends AbstractModule
 {
-    /** @var int rcgs:recordID の property_id */
-    const RECORD_ID_PROPERTY_ID = 240;
+    /** @var int gc:resourceIdentifier の property_id */
+    const RECORD_ID_PROPERTY_ID = 2176;
 
-    const RECORD_ID_TERM = 'rcgs:recordID';
+    const RECORD_ID_TERM = 'gc:resourceIdentifier';
 
     /** @var int 連番の桁数（例: PACKAGE0000001） */
     const SERIAL_LENGTH = 7;
 
     /**
-     * リソーステンプレート ID => recordID プレフィックス
+     * リソーステンプレート ID => resourceIdentifier プレフィックス
      *
      * @var array<int, string>
      */
     const TEMPLATE_PREFIXES = [
-        9 => 'PACKAGE',
-        10 => 'ITEM',
-        11 => 'RELATEDINSTANCE',
-        12 => 'AGENT',
         13 => 'AGENT',
-        14 => 'PLATFORM',
-        15 => 'DEVICE',
-        16 => 'WORK',
-        17 => 'VARIATION',
-        18 => 'CONTENTRATING',
+        15 => 'CONTENTRATING',
+        16 => 'RATINGDESCRIPTOR',
+        22 => 'TOPIC',
+        11 => 'VARIATION',
+        9 => 'PLATFORM',
+        10 => 'MEDIAFORMAT',
+        12 => 'WORK',
+        19 => 'ITEM',
+        18 => 'DEVICE',
+        17 => 'CONTRIBUTOR',
+        21 => 'RELATEDINSTANCE',
+        20 => 'PACKAGE',
     ];
 
     public function attachListeners(SharedEventManagerInterface $sharedEventManager)

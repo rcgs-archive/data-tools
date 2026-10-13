@@ -73,6 +73,12 @@ gc:RelatedInstance
     skos:definition "ビデオゲームに関連する、物理的に作品を具体化するリソース"@ja ;
     rdfs:subClassOf gc:Instance .
 
+gc:Article
+    a owl:Class ;
+    rdfs:label "Article"@en , "記事"@ja ;
+    skos:definition "雑誌の記事"@ja ;
+    rdfs:subClassOf gc:Thing .
+
 gc:PhysicalPackage
     a owl:Class ;
     rdfs:label "Physical Package"@en , "物理パッケージ"@ja ;
